@@ -1,4 +1,4 @@
-// Animação simples de entrada para as seções
+// Animação de entrada nas seções
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".section");
 
@@ -19,6 +19,38 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Efeito CSS (adicione no style.css se quiser):
-// .fade-in { opacity: 0; transform: translateY(20px); }
-// .fade-in.visible { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
+// Rolagem suave ao clicar nos links da navbar
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    window.scrollTo({
+      top: targetSection.offsetTop - 60, // ajuste para compensar navbar fixa
+      behavior: "smooth"
+    });
+  });
+});
+
+// Destaque no menu conforme a seção visível
+const navLinks = document.querySelectorAll(".nav-links a");
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 70;
+    const sectionHeight = section.clientHeight;
+    if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href").substring(1) === current) {
+      link.classList.add("active");
+    }
+  });
+});
