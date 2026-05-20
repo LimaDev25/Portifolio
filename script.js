@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach((section) => {
     section.classList.add("fade-in");
-    observer.observe(section);
+    observer.observe(section); 
   });
 });
 
