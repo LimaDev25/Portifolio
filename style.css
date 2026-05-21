@@ -113,6 +113,16 @@ body {
     font-size: 2rem;
   }
 
+  /* Telas maiores (notebooks e monitores grandes) */
+@media (min-width: 1200px) {
+  #btnTopo {
+    bottom: 40px;   /* mais afastado do rodapé */
+    right: 40px;    /* mais afastado da lateral */
+    font-size: 22px; /* botão maior */
+    padding: 14px;  /* mais espaçamento interno */
+  }
+}
+
   #btnTopo {
     display: none; /* escondido por padrão */
     position: fixed;
