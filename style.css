@@ -109,23 +109,27 @@ body {
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .header h1 }
+  .header h1 {
+    font-size: 2rem;
+  }
 
   #btnTopo {
-  display: none; /* escondido por padrão */
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  padding: 12px;
-  border-radius: 4px;
-}
-#btnTopo:hover {
-  background-color: #555;
+    display: none; /* escondido por padrão */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 4px;
+  }
+
+  #btnTopo:hover {
+    background-color: #555;
+  }
 }
