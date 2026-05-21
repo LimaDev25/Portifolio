@@ -54,3 +54,19 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// Mostrar o botão quando rolar a página
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    document.getElementById("btnTopo").style.display = "block";
+  } else {
+    document.getElementById("btnTopo").style.display = "none";
+  }
+}
+
+// Função para voltar ao topo
+function topFunction() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
